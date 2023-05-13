@@ -1,0 +1,16 @@
+/* Doing this for toggle */
+
+.sizeimg {
+    height: 3rem;
+    width: auto;
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .sizeimg {
+      height: 1.7rem;
+    }
+  }
+  .rounded-img {
+    border-radius: 50%;
+  }
+  
