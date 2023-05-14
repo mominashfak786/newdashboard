@@ -2,7 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}",
   './public/index.html',
-      // add FlowBite classes here
+      // this is flowbite tailwind css
       './node_modules/flowbite/**/*.js',],
 
   plugins: [require("daisyui")],

@@ -7,10 +7,13 @@
   
   @media only screen and (max-width: 767px) {
     .sizeimg {
-      height: 1.7rem;
+      height: 1.8rem;
     }
   }
   .rounded-img {
     border-radius: 50%;
   }
   
+  .shadow-custom {
+    box-shadow: 0 8px 6px 4px rgba(0, 0, 0, 0.1), 0 5px 3px 4px rgba(0, 0, 0, 0.08);
+  }

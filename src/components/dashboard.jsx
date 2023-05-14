@@ -35,7 +35,7 @@ const Dashboard = () => {
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div class="text-center md:hidden">
             <button
-              class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-small rounded text-sm px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-small rounded text-sm px-3 py-2 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
               type="button"
               data-drawer-target="drawer-navigation"
               data-drawer-show="drawer-navigation"
@@ -63,7 +63,7 @@ const Dashboard = () => {
 
           <button
             type="button"
-            class="text-white bg-black bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-500 font-small rounded text-sm px-3 py-2   dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+            class="text-white bg-gray-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-gray-500 font-small rounded text-sm px-3 py-2   dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
           >
             Logout
           </button>
@@ -73,14 +73,14 @@ const Dashboard = () => {
       <div class="flex flex-col md:flex-row">
         <div
           id="drawer-navigation"
-          class="fixed bg-black md:static top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform bg-black dark:bg-gray-800 transform -translate-x-full md:translate-x-0 md:pr-4"
+          class="fixed  bg-black md:static top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform bg-black dark:bg-gray-800 transform -translate-x-full md:translate-x-0 md:pr-4"
           tabindex="-1"
           aria-labelledby="drawer-navigation-label"
         >
           <button
             type="button"
             data-drawer-hide="drawer-navigation"
-            aria-controls="drawer-navigation"
+            aria-controls="#drawer-navigation"
             class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex md:hidden items-center dark:hover:bg-gray-600 dark:hover:text-white"
           >
             <svg
