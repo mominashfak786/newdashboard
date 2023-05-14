@@ -3,15 +3,23 @@ import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import "../styles/dashboard.css";
 import Home from "../routes/Home";
+import Account from "../routes/Account";
+import Refrral from "../routes/Refrral";
+import Commission from "../routes/Commission";
+import Payout from "../routes/Payout";
 import Support from "../routes/Support";
 import FAQ from "../routes/FAQ";
 const Dashboard = () => {
   const [componentStates, setComponentStates] = useState({
     home: false,
+    account: false,
+    refrral: false,
+    commission: false,
+    Payout: false,
     support: false,
     faq: false,
   });
-  
+
   const handleClick = (componentName) => {
     setComponentStates((prevState) => ({
       ...prevState,
@@ -25,26 +33,25 @@ const Dashboard = () => {
     <>
       <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <div class="text-center md:hidden">
-  <button
-    class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-small rounded text-sm px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-    type="button"
-    data-drawer-target="drawer-navigation"
-    data-drawer-show="drawer-navigation"
-    aria-controls="drawer-navigation"
-    onTouchStart={() => {
-      const drawer = document.getElementById('drawer-navigation');
-      if (drawer.classList.contains('-translate-x-full')) {
-        drawer.classList.remove('-translate-x-full');
-      } else {
-        drawer.classList.add('-translate-x-full');
-      }
-    }}
-  >
-    <FaBars size={15} />
-  </button>
-</div>
-
+          <div class="text-center md:hidden">
+            <button
+              class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-small rounded text-sm px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              type="button"
+              data-drawer-target="drawer-navigation"
+              data-drawer-show="drawer-navigation"
+              aria-controls="drawer-navigation"
+              onPointerDown={() => {
+                const drawer = document.getElementById("drawer-navigation");
+                if (drawer.classList.contains("-translate-x-full")) {
+                  drawer.classList.remove("-translate-x-full");
+                } else {
+                  drawer.classList.add("-translate-x-full");
+                }
+              }}
+            >
+              <FaBars size={15} />
+            </button>
+          </div>
 
           <div class="flex items-center">
             <img
@@ -84,8 +91,8 @@ const Dashboard = () => {
                 <a
                   href="#!"
                   class="flex items-center p-2 text-white"
-                  onClick={() => handleClick('home')}>
-                
+                  onClick={() => handleClick("home")}
+                >
                   <span class="ml-3">Home</span>
                 </a>
               </li>
@@ -95,6 +102,7 @@ const Dashboard = () => {
                   class="flex items-center p-2 text-white"
                   aria-controls="dropdown-example"
                   data-collapse-toggle="dropdown-example"
+                  onClick={() => handleClick("account")}
                 >
                   <span class="flex-1 ml-3 text-left whitespace-nowrap">
                     Account Details
@@ -114,17 +122,29 @@ const Dashboard = () => {
                 </button>
                 <ul id="dropdown-example" class="hidden py-2 space-y-2">
                   <li>
-                    <a href="#!" class="flex items-center p-2 text-white">
+                    <a
+                      href="#!"
+                      class="flex items-center p-2 text-white"
+                      onClick={() => handleClick("refrral")}
+                    >
                       Referral History
                     </a>
                   </li>
                   <li>
-                    <a href="#!" class="flex items-center p-2 text-white">
+                    <a
+                      href="#!"
+                      class="flex items-center p-2 text-white"
+                      onClick={() => handleClick("commission")}
+                    >
                       Commissions History
                     </a>
                   </li>
                   <li>
-                    <a href="#!" class="flex items-center p-2 text-white">
+                    <a
+                      href="#!"
+                      class="flex items-center p-2 text-white"
+                      onClick={() => handleClick("payout")}
+                    >
                       Update Payout Details
                     </a>
                   </li>
@@ -134,7 +154,7 @@ const Dashboard = () => {
                 <a
                   href="#!"
                   class="flex items-center p-2 text-white"
-                  onClick={() => handleClick('support')}
+                  onClick={() => handleClick("support")}
                 >
                   <span class="flex-1 ml-3 whitespace-nowrap">
                     Support Account
@@ -145,7 +165,7 @@ const Dashboard = () => {
                 <a
                   href="#!"
                   class="flex items-center p-2 text-white"
-                  onClick={() => handleClick('faq')}
+                  onClick={() => handleClick("faq")}
                 >
                   <span class="flex-1 ml-3 whitespace-nowrap">FAQ</span>
                 </a>
@@ -154,10 +174,14 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="flex-1">
-  {componentStates.home && <Home />}
-  {componentStates.support && <Support />}
-  {componentStates.faq && <FAQ />}
-</div>
+          {componentStates.home && <Home />}
+          {componentStates.account && <Account />}
+          {componentStates.refrral && <Refrral />}
+          {componentStates.commission && <Commission />}
+          {componentStates.payout && <Payout />}
+          {componentStates.support && <Support />}
+          {componentStates.faq && <FAQ />}
+        </div>
       </div>
     </>
   );

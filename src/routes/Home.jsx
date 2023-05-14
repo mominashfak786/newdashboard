@@ -3,11 +3,11 @@ import React from "react";
 function Home() {
   return (
     <>
-      <div class="bg-yellow-500 rounded-md p-4 flex text-center justify-center  items-center h-screen">
-        <p class="text-3xl font-bold text-black text-center">
+      
+        <p class="text-3xl font-bold text-black text-center mt-52">
           Welcome to Letusmaintain.com Channel Partner Dashboard
         </p>
-      </div>
+     
     </>
   );
 }
