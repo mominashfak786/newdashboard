@@ -1,16 +1,16 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 import "../styles/dashboard.css";
 const Login = () => {
   const navigate = useNavigate();
 
   const handleSignUpClick = () => {
-    navigate('/dashboard');
+    navigate("/dashboard");
   };
   return (
     <>
-      <nav class="border bg-white shadow-lg ">
+      <nav class="border bg-white shadow-lg  ">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div class="flex items-center">
             <img
@@ -21,7 +21,7 @@ const Login = () => {
           </div>
         </div>
       </nav>
-      <p class=" font-medium text-3xl text-center mb-8 mt-5">Login</p>
+      <p class=" font-medium text-3xl text-center mb-10 mt-10">Login</p>
       <div class="bg-white rounded-lg shadow-custom  p-6 max-w-sm mx-auto items-center justify-center ">
         <h2 class="text-xl font-bold mb-4">Channel Partner Login</h2>
         <form>
@@ -116,7 +116,7 @@ const Login = () => {
               Remember Me
             </label>
           </div>
-         <button
+          <button
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
             onClick={handleSignUpClick}

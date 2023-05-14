@@ -46,6 +46,14 @@ const Dashboard = () => {
               data-drawer-show="drawer-navigation"
               aria-controls="drawer-navigation"
               aria-expanded="false"
+              onPointerDown={() => {
+                const drawer = document.getElementById("drawer-navigation");
+                if (drawer.classList.contains("-translate-x-full")) {
+                  drawer.classList.remove("-translate-x-full");
+                } else {
+                  drawer.classList.add("-translate-x-full");
+                }
+              }}
             >
               <span class="sr-only">Open main menu</span>
               <svg
