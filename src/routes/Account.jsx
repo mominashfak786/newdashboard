@@ -3,11 +3,11 @@ import React from "react";
 const Account = () => {
   return (
       <>
-      
-              <section className="bg-gray-150 mt-5">
+      <div className="flex justify-center items-center">
+              <section className="bg-gray-150 mt-6 md:flex ml-5  ">
     <div className="flex flex-wrap">
-    <div className="w-full lg:w-1/3 mb-4 md:ml-10">
-        <div className="bg-white border border-gray-200 rounded-lg shadow p-4">
+    <div className="w-full  lg:w-1/3 mb-4 md:ml-10 md:mr-5 ">
+        <div className="bg-white border border-gray-200 rounded-lg shadow p-4 ml-5">
           <div className="text-center">
             <img
               src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
@@ -19,12 +19,15 @@ const Account = () => {
             <p className="text-gray-500">Bay Area, San Francisco, CA</p>
           </div>
           <div className="flex justify-center mt-4">
-            <button className="btn btn-primary mr-2">Edit</button>
-            <button className="btn btn-outline-primary">Update</button>
-          </div>
-        </div>
+          <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Update</button>
+          <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Edit</button>
+                </div>
+            </div>
+            
       </div>
-      <div className="w-full lg:w-1/2 mb-4 md:ml-12 ">
+      
+        </div>
+        <div className="  lg:w-1/2 mb-4  ">
 
         <div className="bg-white border border-gray-200 rounded-lg shadow p-4">
           <div className="flex mb-3">
@@ -100,13 +103,18 @@ const Account = () => {
           </div> 
           <hr className="my-3" />
           <div className="flex justify-center">
-            <button className="btn btn-primary">Save</button>
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="button"
+            
+          >
+            Save
+          </button>
           </div>
         </div>
       </div>
-    </div>
 </section>
-     
+</div>
     </>
   );
 };

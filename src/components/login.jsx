@@ -1,7 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 import "../styles/dashboard.css";
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handleSignUpClick = () => {
+    navigate('/dashboard');
+  };
   return (
     <>
       <nav class="border bg-white shadow-lg ">
@@ -113,6 +119,7 @@ const Login = () => {
          <button
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
+            onClick={handleSignUpClick}
           >
             Login
           </button>
