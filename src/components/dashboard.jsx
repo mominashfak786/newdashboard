@@ -54,12 +54,13 @@ const Dashboard = () => {
       </nav>
 
       <div class="flex flex-col md:flex-row ">
-        <div
-          id="drawer-navigation"
-          class="fixed bg-black md:static top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform bg-white dark:bg-gray-800 transform -translate-x-full md:translate-x-0 md:pr-4"
-          tabindex="-1"
-          aria-labelledby="drawer-navigation-label"
-        >
+      <div
+  id="drawer-navigation"
+  class="fixed bg-black md:static top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform bg-black dark:bg-gray-800 transform -translate-x-full md:translate-x-0 md:pr-4"
+  tabindex="-1"
+  aria-labelledby="drawer-navigation-label"
+>
+
           <div className="flex items-center justify-center h-30 w-full">
             <img
               className="rounded-img"
