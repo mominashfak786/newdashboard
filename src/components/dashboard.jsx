@@ -4,37 +4,47 @@ import { FaBars } from "react-icons/fa";
 import "../styles/dashboard.css";
 import Home from "../routes/Home";
 import Support from "../routes/Support";
-import FAQ from "../routes/FAQ"
+import FAQ from "../routes/FAQ";
 const Dashboard = () => {
-  const [showHomeContent, setShowHomeContent] = useState(false);
-    const [showSupportContent, setShowSupportContent] = useState(false);
-  const [showFAQContent, setShowFAQContent] = useState(false);
-    
-  const handleHomeClick = () => {
-    setShowHomeContent(true);
-    };
-    const handleSupportClick = () => {
-        setShowSupportContent(true);
-    };
-    const handleFAQClick = () => {
-        setShowFAQContent(true);
-      };
-
+  const [componentStates, setComponentStates] = useState({
+    home: false,
+    support: false,
+    faq: false,
+  });
+  
+  const handleClick = (componentName) => {
+    setComponentStates((prevState) => ({
+      ...prevState,
+      [componentName]: true,
+      ...Object.keys(prevState)
+        .filter((key) => key !== componentName)
+        .reduce((acc, key) => ({ ...acc, [key]: false }), {}),
+    }));
+  };
   return (
     <>
       <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <div class="text-center md:hidden">
-            <button
-              class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-small rounded text-sm px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-              type="button"
-              data-drawer-target="drawer-navigation"
-              data-drawer-show="drawer-navigation"
-              aria-controls="drawer-navigation"
-            >
-              <FaBars size={15} />
-            </button>
-          </div>
+        <div class="text-center md:hidden">
+  <button
+    class="text-white bg-black hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-small rounded text-sm px-5 py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+    type="button"
+    data-drawer-target="drawer-navigation"
+    data-drawer-show="drawer-navigation"
+    aria-controls="drawer-navigation"
+    onTouchStart={() => {
+      const drawer = document.getElementById('drawer-navigation');
+      if (drawer.classList.contains('-translate-x-full')) {
+        drawer.classList.remove('-translate-x-full');
+      } else {
+        drawer.classList.add('-translate-x-full');
+      }
+    }}
+  >
+    <FaBars size={15} />
+  </button>
+</div>
+
 
           <div class="flex items-center">
             <img
@@ -54,13 +64,12 @@ const Dashboard = () => {
       </nav>
 
       <div class="flex flex-col md:flex-row ">
-      <div
-  id="drawer-navigation"
-  class="fixed bg-black md:static top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform bg-black dark:bg-gray-800 transform -translate-x-full md:translate-x-0 md:pr-4"
-  tabindex="-1"
-  aria-labelledby="drawer-navigation-label"
->
-
+        <div
+          id="drawer-navigation"
+          class="fixed bg-black md:static top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform bg-black dark:bg-gray-800 transform -translate-x-full md:translate-x-0 md:pr-4"
+          tabindex="-1"
+          aria-labelledby="drawer-navigation-label"
+        >
           <div className="flex items-center justify-center h-30 w-full">
             <img
               className="rounded-img"
@@ -75,8 +84,8 @@ const Dashboard = () => {
                 <a
                   href="#!"
                   class="flex items-center p-2 text-white"
-                  onClick={handleHomeClick}
-                >
+                  onClick={() => handleClick('home')}>
+                
                   <span class="ml-3">Home</span>
                 </a>
               </li>
@@ -122,14 +131,22 @@ const Dashboard = () => {
                 </ul>
               </li>
               <li>
-                <a href="#!" class="flex items-center p-2 text-white" onClick={handleSupportClick}>
+                <a
+                  href="#!"
+                  class="flex items-center p-2 text-white"
+                  onClick={() => handleClick('support')}
+                >
                   <span class="flex-1 ml-3 whitespace-nowrap">
                     Support Account
                   </span>
                 </a>
               </li>
               <li>
-                <a href="#!" class="flex items-center p-2 text-white" onClick={handleFAQClick}>
+                <a
+                  href="#!"
+                  class="flex items-center p-2 text-white"
+                  onClick={() => handleClick('faq')}
+                >
                   <span class="flex-1 ml-3 whitespace-nowrap">FAQ</span>
                 </a>
               </li>
@@ -137,10 +154,10 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="flex-1">
-      {showHomeContent && <Home />}
-                  {showSupportContent && <Support />}
-                  {showFAQContent && <FAQ />}
-    </div>
+  {componentStates.home && <Home />}
+  {componentStates.support && <Support />}
+  {componentStates.faq && <FAQ />}
+</div>
       </div>
     </>
   );
