@@ -6,7 +6,7 @@ const Account = () => {
       
               <section className="bg-gray-150 mt-5">
     <div className="flex flex-wrap">
-      <div className="w-full lg:w-1/3 mb-4 ml-10  ">
+    <div className="w-full lg:w-1/3 mb-4 md:ml-10">
         <div className="bg-white border border-gray-200 rounded-lg shadow p-4">
           <div className="text-center">
             <img
@@ -24,7 +24,7 @@ const Account = () => {
           </div>
         </div>
       </div>
-      <div className="w-full lg:w-1/2 mb-4 ml-12">
+      <div className="w-full lg:w-1/2 mb-4 md:ml-12 ">
 
         <div className="bg-white border border-gray-200 rounded-lg shadow p-4">
           <div className="flex mb-3">

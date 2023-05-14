@@ -4,8 +4,8 @@ const Payout = () => {
   return (
     <>
       <div class="flex justify-center bg-white border border-gray-200 rounded-lg shadow ml-3 mr-3 mt-2 ">
-        <form className="w-full max-w-lg  ">
-          <h5 className="mb-4 text-lg font-medium">Update Transfer Mode</h5>
+        <form className=" md:pl-20 md:pr-20 p-3">
+          <h5 className="mb-4  font-medium text-3xl text-center">Update Transfer Mode</h5>
           <div className="mb-4">
             <p className="font-medium mb-2">Select any one of them:</p>
             <label className="inline-flex items-center mr-4">
@@ -27,14 +27,14 @@ const Payout = () => {
               />
               <span className="ml-2 text-gray-700">PayPal</span>
             </label>
-            <label className="inline-flex items-center ml-4">
+            <label className="inline-flex items-center ">
               <input
                 type="checkbox"
-                className="form-checkbox h-5 w-5 text-blue-600"
+                className="form-checkbox h-5 w-5 mt-2  text-blue-600"
                 name="transferMode"
                 defaultValue="paymentLink"
               />
-              <span className="ml-2 text-gray-700">Payment Link</span>
+              <span className="ml-2 mt-2 text-gray-700">Payment Link</span>
             </label>
           </div>
           <div className="flex flex-wrap -mx-2 mb-4">
