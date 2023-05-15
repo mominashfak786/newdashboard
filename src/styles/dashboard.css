@@ -1,9 +1,16 @@
 /* Doing this for toggle */
 
 .sizeimg {
-  margin: auto;
+ margin-left: 1.5rem;
     height: 3rem;
     width: auto;
+  }
+   
+  @media only screen and (max-width: 767px) {
+    .sizeimg {
+      height: 2.4rem;
+ 
+    }
   }
   .ctr{
     width: 100wh;
@@ -13,15 +20,12 @@
     .ctr {
       text-align: center;
     }
-  }
- 
-  
-  @media only screen and (max-width: 767px) {
-    .sizeimg {
-      height: 2.2rem;
-      width: max-content;
+    .custom-button {
+    padding: 0.3rem 0.5rem !important;
     }
   }
+ 
+ 
   .rounded-img {
     border-radius: 50%;
   }
@@ -31,11 +35,10 @@
   }
   .custom-button {
     color: #ffffff;
-    border: 2px solid #000;
+    border: 1px solid #000;
     background-color: #000000;
     display: inline-flex;
     align-items: center;
-    margin-top: 0.5rem;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     font-weight: 500;

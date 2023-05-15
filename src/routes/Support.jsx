@@ -31,7 +31,7 @@ const Support = () => {
             for="countries"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
-            Select your country
+            Type
           </label>
           <select
             id="countries"
