@@ -37,7 +37,7 @@ const Dashboard = () => {
   return (
     <>
       <nav class="border bg-white shadow-lg ">
-        <div  class="max-w-screen-xl flex flex-wrap items-center mx-auto p-4 sm:justify-between">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div class="text-center">
             <button
               class="custom-button "
