@@ -1,174 +1,252 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Payout = () => {
+function BankTransfer() {
   return (
     <>
-      <div class="flex justify-center bg-white border border-gray-200 rounded-lg shadow ml-3 mr-3 mt-2 ">
-        <form className=" md:pl-20 md:pr-20 p-3">
-          <h5 className="mb-4  font-medium text-3xl text-center">Update Transfer Mode</h5>
-          <div className="mb-4">
-            <p className="font-medium mb-2">Select any one of them:</p>
-            <label className="inline-flex items-center mr-4">
-              <input
-                type="checkbox"
-                className="form-checkbox h-5 w-5 text-blue-600"
-                name="transferMode"
-                defaultValue="bankTransfer"
-                defaultChecked=""
-              />
-              <span className="ml-2 text-gray-700">Bank Transfer</span>
+      <div className="flex-wrap  mx-auto mt-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-center">
+          <div className="col-span-1 shadow rounded-md p-6">
+            <label
+              className="block font-medium mb-2"
+              htmlFor="accountHolderName"
+            >
+              Name of the Account Holder
             </label>
-            <label className="inline-flex items-center">
-              <input
-                type="checkbox"
-                className="form-checkbox h-5 w-5 text-blue-600"
-                name="transferMode"
-                defaultValue="paypal"
-              />
-              <span className="ml-2 text-gray-700">PayPal</span>
+            <input
+              className="form-input mb-2 w-full rounded-md border-gray-300 focus:border-indigo-500 focus:shadow-outline-indigo"
+              id="accountHolderName"
+              type="text"
+              placeholder="John Doe"
+            />
+            <label className="block font-medium mb-2" htmlFor="accountNumber">
+              Account Number
             </label>
-            <label className="inline-flex items-center ">
-              <input
-                type="checkbox"
-                className="form-checkbox h-5 w-5 mt-2  text-blue-600"
-                name="transferMode"
-                defaultValue="paymentLink"
-              />
-              <span className="ml-2 mt-2 text-gray-700">Payment Link</span>
+            <input
+              className="form-input mb-2 w-full rounded-md border-gray-300 focus:border-indigo-500 focus:shadow-outline-indigo"
+              id="accountNumber"
+              type="text"
+              placeholder="123456789"
+            />
+            <label className="block font-medium mb-2" htmlFor="bankName">
+              Bank Name
             </label>
+            <input
+              className="form-input mb-2 w-full rounded-md border-gray-300 focus:border-indigo-500 focus:shadow-outline-indigo"
+              id="bankName"
+              type="text"
+              placeholder="DBS Bank"
+            />
+            <label className="block font-medium mb-2" htmlFor="bankAddress">
+              Bank Address
+            </label>
+            <textarea
+              className="form-textarea mb-2 w-full rounded-md border-gray-300 focus:border-indigo-500 focus:shadow-outline-indigo"
+              id="address"
+              rows={2}
+              placeholder="123 Main St, Anytown, Singapore 12345"
+              defaultValue={""}
+            ></textarea>
           </div>
-          <div className="flex flex-wrap -mx-2 mb-4">
-            <div className="w-full md:w-1/2 px-2 mb-4 md:mb-0">
-              <label
-                className="block font-medium mb-2"
-                htmlFor="accountHolderName"
-              >
-                Name of the Account Holder
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="accountHolderName"
-                type="text"
-                placeholder="John Doe"
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2 mb-4 md:mb-0">
-              <label
-                className="block font-medium mb-2"
-                htmlFor="accountHolderName"
-              >
-                Account Number
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="accountHolderName"
-                type="text"
-                placeholder="John Doe"
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2 mb-4 md:mb-0">
-              <label
-                className="block font-medium mb-2"
-                htmlFor="accountHolderName"
-              >
-                Bank Name
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="bankName"
-                type="text"
-                placeholder="DBS Bank"
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2 mb-4 md:mb-0">
-              <label
-                className="block font-medium mb-2"
-                htmlFor="accountHolderName"
-              >
-                Bank Address
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="bankAddress"
-                type="text"
-                placeholder="12 Marina Boulevard, Singapore 018982"
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2 mb-4 md:mb-0">
-              <label
-                className="block font-medium mb-2"
-                htmlFor="accountHolderName"
-              >
-                SWIFT Code
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="swiftCode"
-                type="text"
-                placeholder="ABCD1234EFG"
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2">
-              <label className="block font-medium mb-2" htmlFor="accountNumber">
-                IFSC Code [If not then ignore]
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="ifscCode"
-                type="text"
-                placeholder="ABCD1234567"
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2">
-              <label className="block font-medium mb-2" htmlFor="accountNumber">
-                Mobile Number
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="mobileNumber"
-                type="text"
-                placeholder={9876543210}
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2">
-              <label className="block font-medium mb-2" htmlFor="accountNumber">
-                Your Address
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="address"
-                rows={6}
-                placeholder="123 Main St, Anytown, Singapore 12345"
-                defaultValue={""}
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2 mb-4">
-              <label className="block font-medium mb-2" htmlFor="paypalDetails">
-                PayPal Details
-              </label>
-              <input
-                className="w-full border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="paypalDetails"
-                type="text"
-                placeholder="Enter the PayPal Details"
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2 mb-4">
-              <label className="block font-medium mb-2" htmlFor="paymentLink">
-                Payment Link
-              </label>
-              <input
-                className="w-full border rounded py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="paymentLink"
-                type="text"
-                placeholder="Enter the Payment Link"
-              />
-            </div>
+          <div className="col-span-1 shadow rounded-md p-6">
+            <label className="block font-medium mb-2" htmlFor="swiftCode">
+              SWIFT Code
+            </label>
+            <input
+              className="form-input mb-2 w-full rounded-md border-gray-300 focus:border-indigo-500 focus:shadow-outline-indigo"
+              id="swiftCode"
+              type="text"
+              placeholder="ABCD1234EFG"
+            />
+            <label className="block font-medium mb-2" htmlFor="ifscCode">
+              IFSC Code [If not then ignore]
+            </label>
+            <input
+              className="form-input mb-2 w-full rounded-md border-gray-300 focus:border-indigo-500 focus:shadow-outline-indigo"
+              id="ifscCode"
+              type="text"
+              placeholder="ABCD1234567"
+            />
+            <label className="block font-medium mb-2" htmlFor="mobileNumber">
+              Mobile Number
+            </label>
+            <input
+              className="form-input mb-2 w-full rounded-md border-gray-300 focus:border-indigo-500 focus:shadow-outline-indigo"
+              id="mobileNumber"
+              type="text"
+              placeholder="9876543210"
+            />
+            <label className="block font-medium mb-2" htmlFor="address">
+              Your Address
+            </label>
+            <textarea
+              className="form-textarea mb-2 w-full rounded-md border-gray-300 focus:border-indigo-500 focus:shadow-outline-indigo"
+              id="address"
+              rows={2}
+              placeholder="123 Main St, Anytown, Singapore 12345"
+              defaultValue={""}
+            ></textarea>
           </div>
-          <div className="flex justify-center">
-            <button className="btn btn-primary">Save</button>
-          </div>
-        </form>
+        </div>
+
+        <div className="text-center mt-3">
+          <button
+            type="submit"
+            class="text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}
+
+function Paypal() {
+  return (
+    <div className="md:mt-6 mx-auto mt-6 ">
+      <div className="w-full md:w-1/2 px-6 mb-4 shadow rounded-md p-6  ">
+        <label
+          className="block  font-medium mb-2 text-center mt-2"
+          htmlFor="paypalDetails"
+        >
+          PayPal Details
+        </label>
+        <input
+          className="w-full border rounded py-2 px-6 leading-tight focus:outline-none focus:shadow-outline"
+          id="paypalDetails"
+          type="text"
+          placeholder="Enter the PayPal Details"
+        />
+        <div className="text-center mt-3">
+          <button
+            type="submit"
+            class="text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PaymentLink() {
+  return (
+    <div className="md:mt-6 mx-auto mt-6">
+      <div className="w-full md:w-1/2 px-6 mb-4 shadow rounded-md p-6">
+        <label
+          className="block text-center font-medium mb-2 mt-2"
+          htmlFor="paymentLink"
+        >
+          Payment Link
+        </label>
+        <input
+          className="w-full border rounded py-2 px-6 leading-tight focus:outline-none focus:shadow-outline"
+          id="paymentLink"
+          type="text"
+          placeholder="Enter the Payment Link"
+        />
+        <div className="text-center mt-3">
+          <button
+            type="submit"
+            class="text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const Payout = () => {
+  const [isBankTransferChecked, setIsBankTransferChecked] = useState(false);
+  const [isPayPalChecked, setIsPayPalChecked] = useState(false);
+  const [isPaymentLinkChecked, setIsPaymentLinkChecked] = useState(false);
+
+  function handleBankTransferChange() {
+    setIsBankTransferChecked(true);
+    setIsPayPalChecked(false);
+    setIsPaymentLinkChecked(false);
+  }
+
+  function handlePaypalChange() {
+    setIsBankTransferChecked(false);
+    setIsPayPalChecked(true);
+    setIsPaymentLinkChecked(false);
+  }
+
+  function handlePaymentLinkChange() {
+    setIsBankTransferChecked(false);
+    setIsPayPalChecked(false);
+    setIsPaymentLinkChecked(true);
+  }
+
+  return (
+    <>
+      <h1 class="text-3xl font-bold mb-2 mt-2  text-center ">
+        Update Transfer Mode
+      </h1>
+      <h1 class="text-xl font-bold mb-1  text-center ">
+        Select any one of them:
+      </h1>
+
+      <div className=" flex justify-between mt-6 ">
+        <div className="flex mx-auto items-center   border border-gray-400 rounded dark:border-gray-700">
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            defaultValue=""
+            checked={isBankTransferChecked}
+            onChange={handleBankTransferChange}
+            name="bordered-checkbox"
+            className="w-4 ml-6 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          />
+          <label
+            htmlFor="bordered-checkbox-1"
+            className="py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+          >
+            Bank Transfer
+          </label>
+
+          <input
+            defaultChecked=""
+            id="bordered-checkbox-2"
+            type="checkbox"
+            defaultValue=""
+            checked={isPayPalChecked}
+            onChange={handlePaypalChange}
+            name="bordered-checkbox"
+            className="w-4 ml-6 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          />
+          <label
+            htmlFor="bordered-checkbox-2"
+            className=" py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+          >
+            PayPal
+          </label>
+          <input
+            defaultChecked=""
+            id="bordered-checkbox-2"
+            type="checkbox"
+            defaultValue=""
+            checked={isPaymentLinkChecked}
+            onChange={handlePaymentLinkChange}
+            name="bordered-checkbox"
+            className="w-4 h-4 ml-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          />
+          <label
+            htmlFor="bordered-checkbox-2"
+            className=" py-4 ml-2 mr-5 text-sm font-medium text-gray-900 dark:text-gray-300"
+          >
+            Payment Link
+          </label>
+        </div>
+      </div>
+      <div className="flex">
+        {isBankTransferChecked && BankTransfer()}
+        {isPayPalChecked && Paypal()}
+        {isPaymentLinkChecked && PaymentLink()}
       </div>
     </>
   );
